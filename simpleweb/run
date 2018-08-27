@@ -1,0 +1,10 @@
+#!/bin/bash
+
+docker run \
+	--rm \
+	-it \
+	-p 8080:8080 \
+	-v $(pwd):/go/src/app \
+	-w /go/src/app \
+	goweb \
+	gin -p 8080 -a 8081 run server.go

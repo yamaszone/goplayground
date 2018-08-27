@@ -1,0 +1,16 @@
+version: "3.6"
+
+services:
+    web:
+        #image: goweb
+        build: .
+        ports:
+            - "8080:8081"
+        volumes:
+            - ./:/go/src/app
+        networks:
+            - code-network
+
+networks:
+    code-network:
+        driver: bridge
